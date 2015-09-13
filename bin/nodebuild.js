@@ -59,7 +59,7 @@ function printTags() {
 function build() {
   getTags(function(tags) {
     console.log("Downloading latest Images... (this may take a while, go grab coffee)")
-    //downloadImages(tags,function() {
+    downloadImages(tags,function() {
       getDockerfile(function(file) {
         console.log("Creating temporary working directories")
         createTmpDirs(tags,file,function(tags) {
@@ -78,7 +78,7 @@ function build() {
           })
         })
       })
-    //})
+    })
   })
 }
 
