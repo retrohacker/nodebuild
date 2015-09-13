@@ -4,7 +4,7 @@
   "description": "Test building your node app against various versions of Node",
   "main": "index.js",
   "bin": {
-    "nodebuild": "nodebuild.js"
+    "nodebuild": "bin/nodebuild.js"
   },
   "author": "William Blankenship <william.jblankenship@gmail.com>",
   "license": "MIT",
