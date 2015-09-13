@@ -3,6 +3,8 @@ nodebuild
 
 Tests building your project against a large collection of Node versions (currently 43!)
 
+Creates a file `output.md` which contains all of the output for each build in a nice markdown file.
+
 # Usage
 
 Create a `Dockerfile` for your project that includes your build steps
