@@ -85,7 +85,7 @@ function build() {
 function generateLogs(tags,cb) {
   var count = tags.length
   console.log("Generating Output")
-  fs.writeFile(path.join(__dirname,"output.md"),"nodebuild output\n================\n\n",'utf8',function(e) {
+  fs.writeFile(path.join(process.cwd(),"output.md"),"nodebuild output\n================\n\n",'utf8',function(e) {
     if(e) {
       console.error("Encountered error while generating output file... This is bad, you must rerun the tool.")
       return handleErrors(e)
@@ -98,7 +98,7 @@ function generateLogs(tags,cb) {
           console.error(e.stack)
         }
         data = "## "+v+"\n\n```\n"+data+"\n```"+"\n\n"
-        fs.appendFile(path.join(__dirname,"output.md"),data,'utf8',function(e) {
+        fs.appendFile(path.join(process.cwd(),"output.md"),data,'utf8',function(e) {
           if(e) {
             console.error("Error while generating output for",v)
             console.error(e)
@@ -126,7 +126,7 @@ function createTmpDirs(tags,file,cb) {
     tmp.dir({unsafeCleanup:true},function (e,tmpdir) {
       result[v] = tmpdir
       if(e) return handleErrors(e)
-      cpr(__dirname,tmpdir,function(e) {
+      cpr(process.cwd(),tmpdir,function(e) {
         if(e) return handleErrors(e)
         fs.writeFile(path.join(tmpdir,"Dockerfile"),"FROM nodesource/node:"+v+"\n"+file,function(e) {
           if(e) return handleErrors(e)
@@ -182,7 +182,7 @@ function downloadImage(image,cb) {
 }
 
 function getDockerfile(cb) {
-  fs.readFile(path.join(__dirname,"Dockerfile"),'utf8',function(e,data) {
+  fs.readFile(path.join(process.cwd(),"Dockerfile"),'utf8',function(e,data) {
     if(e) return handleError(new Error("No Dockerfile found. Please create a Dockerfile that builds your project."))
     //Remove the "FROM" line so we can replace it with our own
     data = data.split('\n').filter(function(v){return v.search(/^FROM.*$/)===-1}).join('\n')
