@@ -1,0 +1,27 @@
+{
+  "name": "nodebuild",
+  "version": "1.0.0",
+  "description": "Test building your node app against various versions of Node",
+  "main": "index.js",
+  "bin": {
+    "nodebuild": "nodebuild.js"
+  },
+  "author": "William Blankenship <william.jblankenship@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "async": "^1.4.2",
+    "cpr": "^0.4.2",
+    "request": "^2.61.0",
+    "tmp": "0.0.27",
+    "yargs": "^3.24.0"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wblankenship/nodebuild.git"
+  },
+  "bugs": {
+    "url": "https://github.com/wblankenship/nodebuild/issues"
+  },
+  "homepage": "https://github.com/wblankenship/nodebuild#readme"
+}
