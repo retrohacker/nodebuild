@@ -1,6 +1,8 @@
 nodebuild
 =========
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/retrohacker/nodebuild.svg)](https://greenkeeper.io/)
+
 Tests building your project against a large collection of Node versions (currently 43!)
 
 Creates a file `output.md` which contains all of the output for each build in a nice markdown file.
