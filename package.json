@@ -9,11 +9,11 @@
   "author": "William Blankenship <william.jblankenship@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "async": "^1.4.2",
-    "cpr": "^0.4.2",
+    "async": "^2.4.0",
+    "cpr": "^2.0.2",
     "request": "^2.61.0",
-    "tmp": "0.0.27",
-    "yargs": "^3.24.0"
+    "tmp": "0.0.31",
+    "yargs": "^7.1.0"
   },
   "devDependencies": {},
   "repository": {
